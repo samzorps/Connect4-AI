@@ -1,13 +1,14 @@
 #
 # ps9pr3.py  (Problem Set 9, Problem 3)
 #
-# Playing the game 
-#   
+# Playing the game
+#
 
-from ps9pr1 import Board
-from ps9pr2 import Player
+from board import Board
+from player import Player
+
 import random
-    
+
 def connect_four(p1, p2):
     """ Plays a game of Connect Four between the two specified players,
         and returns the Board object as it looks at the end of the game.
@@ -26,7 +27,7 @@ def connect_four(p1, p2):
     print()
     b = Board(6, 7)
     print(b)
-    
+
     while True:
         if process_move(p1, b) == True:
             return b
@@ -44,14 +45,14 @@ def process_move(p, b):
     if t == True:
         print(p, 'wins in', p.num_moves, 'moves. \nCongratulations!')
         return True
-    
+
     elif b.is_full() == True:
         print('It\'s a tie!')
         return True
-    
+
     else:
         return False
-    
+
 class RandomPlayer(Player):
     def next_move(self, b):
         l = [x for x in range(b.width) if b.slots[0][x]== ' ']

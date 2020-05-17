@@ -1,10 +1,10 @@
 #
 # ps9pr2.py  (Problem Set 9, Problem 2)
 #
-# A Connect-Four Player class 
+# A Connect-Four Player class
 #  
 
-from ps9pr1 import Board
+from board import Board
 
 # write your class below
 
@@ -13,15 +13,15 @@ class Player:
          assert(checker== 'X' or checker== 'O')
          self.checker=checker
          self.num_moves=0
-    
+
     def __repr__(self):
         return 'Player ' + self.checker
-    
+
     def opponent_checker(self):
         if self.checker== 'O' :
             return 'X'
         return 'O'
-    
+
     def next_move(self, b):
         while True:
             c= int( input('Enter a column: ') )
